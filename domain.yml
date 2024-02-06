@@ -1,0 +1,61 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - select_diagnosis
+  - select_remedy
+  - get_disease
+  - get_symptoms
+
+actions:
+- action_show_remedy
+- action_show_diagnosis
+
+
+#slots:
+#   disease:
+#      type: text
+#      mappings:
+#        - type: from_text
+
+responses:
+  utter_greet:
+  - text: "Hey! This is Chikitsa, I am here to help you."
+
+  utter_select_diagnosis_or_remedy:
+  - text: "Do you need Diagnosis or remedy."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_symptoms:
+  - text: "Please state your symptoms"
+  - text: "Please describe your symptoms"
+  - text: "Please tell me what is bothering you"
+
+  utter_ask_disease:
+  - text: "Please describe your disease"
+  - text: "Please tell me for which disease you want the remedy"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

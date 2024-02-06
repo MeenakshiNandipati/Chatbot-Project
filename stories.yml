@@ -1,0 +1,26 @@
+version: "3.1"
+
+stories:
+
+- story: diagnosis path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_diagnosis_or_remedy
+  - intent: select_diagnosis
+  - action: utter_ask_symptoms
+  - intent: get_symptoms
+  - action: action_show_diagnosis
+
+
+- story: remedy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_diagnosis_or_remedy
+  - intent: select_remedy
+  - action: utter_ask_disease
+  - intent: get_disease
+  - action: action_show_remedy
+
+
